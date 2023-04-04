@@ -2,6 +2,7 @@
   display: block;
   max-width: 460px;
   padding: 45px;
+  --node-title: #271468;
 }
 
 .sidebar {
@@ -11,8 +12,13 @@
     align-items: center;
   }
 
+  &__avatar {
+    border-radius: 50%;
+    border: #d5d5d5 3px solid;
+  }
+
   &__title {
-    color: #271468;
+    color: var(--node-title);
     font-weight: 700;
     font-size: 14px;
     margin-top: 30px;

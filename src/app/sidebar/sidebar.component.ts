@@ -12,7 +12,7 @@ export interface Node {
 })
 export class SidebarComponent implements OnInit {
   TAB_DEPTH = 30;
-  companies: Node[] = [];
+  nodes: Node[] = [];
   ngOnInit() {
     const responseData = [
       { id: '1', name: 'Ravvivo / Finance Team / Michael P. Lucifer'},
@@ -39,6 +39,6 @@ export class SidebarComponent implements OnInit {
       })
     })
 
-    this.companies = parentNode;
+    this.nodes = parentNode;
   }
 }
