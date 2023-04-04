@@ -1,0 +1,36 @@
+<div class="sidebar__header">
+  <div class="sidebar__bell-wrapper">
+    <img src="/assets/images/bell.svg" alt="">
+  </div>
+  <img src="/assets/images/avatar.png" alt="" style="border-radius: 50%; border: #d5d5d5 3px solid">
+</div>
+
+<h1 class="sidebar__title">
+  Companies
+</h1>
+
+<ng-container *ngFor="let company of companies">
+
+  <ng-template [ngTemplateOutlet]="node" [ngTemplateOutletContext]="{$implicit: company, depth: 0 }"></ng-template>
+
+</ng-container>
+
+<ng-template #node let-data let-depth="depth">
+
+  <div [class]="data.child.length ? 'sidebar__user' : 'sidebar__title'"
+       [ngStyle]="{ marginLeft: depth + 'px'}">
+    <span>{{ data.name }}</span>
+    <div *ngIf="data.child.length" class="sidebar__send-wrapper">
+      <img src="assets/images/send.svg" alt="send">
+    </div>
+  </div>
+
+  <ng-container *ngIf="data.child.length">
+    <div *ngFor="let child of data.child">
+      <ng-template [ngTemplateOutlet]="node"
+                   [ngTemplateOutletContext]="{$implicit: child, depth: depth + TAB_DEPTH }">
+      </ng-template>
+    </div>
+  </ng-container>
+
+</ng-template>

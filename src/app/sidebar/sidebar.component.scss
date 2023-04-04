@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  max-width: 460px;
+  padding: 45px;
+}
+
+.sidebar {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    color: #271468;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 30px;
+  }
+
+  &__user {
+    color: #96A0B5;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  &__bell-wrapper {
+    background: white;
+    border-radius: 16px;
+    height: 54px;
+    width: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px #9191913b;
+  }
+
+  &__send-wrapper {
+    background: white;
+    border-radius: 8px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px #9191913b;
+  }
+}
